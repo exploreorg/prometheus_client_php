@@ -143,7 +143,7 @@ class Redis implements Adapter
      */
     private function connectToServer(): bool
     {
-        try {
+        //try {
             if ($this->options['persistent_connections']) {
                 return $this->redis->pconnect(
                     $this->options['host'],
@@ -153,9 +153,9 @@ class Redis implements Adapter
             }
 
             return $this->redis->connect($this->options['host'], $this->options['port'], $this->options['timeout']);
-        } catch (\RedisException $e) {
+        /*} catch (\RedisException $e) {
             return false;
-        }
+        }*/
     }
 
     /**
